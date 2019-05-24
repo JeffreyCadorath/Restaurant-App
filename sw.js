@@ -1,4 +1,4 @@
-const myCache = 'restaurantCacheV13';
+const myCache = 'restaurantCacheV14';
 
 self.addEventListener('install', function(event) {
   event.waitUntil(
@@ -23,7 +23,7 @@ self.addEventListener('install', function(event) {
         'js/main.js',
         'css/styles.css',
         'manifest.json',
-        '/Restaurant-App/',
+        '/Restaurant-App/'
       ]);
     })
   );
@@ -48,10 +48,7 @@ self.addEventListener('fetch', function(event) {
   event.respondWith(
     caches.open(myCache).then(function(cache) {
       return cache.match(event.request).then(function (response) {
-        return response || fetch(event.request).then(function(response) {
-          cache.put(event.request, response.clone());
-          return response;
-        });
+        return response || fetch(event.request)
       });
     })
   );
