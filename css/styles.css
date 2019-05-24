@@ -38,7 +38,17 @@ article, aside, canvas, details, figcaption, figure, footer, header, hgroup, men
 #maincontent {
   background-color: #f3f3f3;
   min-height: 100%;
+  display: flex;
+  flex-wrap: wrap;
 }
+
+.inside #maincontent {
+  display: flex;
+  align-content: center;
+  align-items: center;
+  text-align: left;
+}
+
 #footer {
   background-color: #444;
   color: #aaa;
@@ -315,6 +325,22 @@ nav h1 a {
   #restaurants-list li {
     padding: 10px 15px 15px 15px;
   }
+}
+
+@media screen and (max-width: 880px) {
+  
+  div.map {
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+
+  #maincontent {
+		display: flex;
+		flex-wrap: wrap;
+		flex-direction: row;
+		width: 100%;
+	}
+
 }
 
 

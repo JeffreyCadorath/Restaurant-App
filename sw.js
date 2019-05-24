@@ -1,4 +1,4 @@
-const myCache = 'restaurantCacheV13';
+const myCache = 'restaurantCacheV14';
 
 self.addEventListener('install', function(event) {
   event.waitUntil(
@@ -34,8 +34,8 @@ self.addEventListener('activate', function(event) {
     caches.keys().then(function(cacheNames) {
       return Promise.all(
         cacheNames.filter(function(cacheName) {
-          return cacheName.startsWith('restaurantCacheV') &&
-                 cacheName != myCache;
+          return cacheName.startsWith('restaurant')
+          &&  cacheName != myCache;
         }).map(function(cacheName) {
           return caches.delete(cacheName);
         })
@@ -48,7 +48,10 @@ self.addEventListener('fetch', function(event) {
   event.respondWith(
     caches.open(myCache).then(function(cache) {
       return cache.match(event.request).then(function (response) {
-        return response || fetch(event.request)
+        return response || fetch(event.request).then(function(response) {
+          cache.put(event.request, response.clone());
+          return response;
+        });
       });
     })
   );
