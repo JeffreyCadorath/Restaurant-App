@@ -1,4 +1,4 @@
-const myCache = 'restaurantCacheV14';
+const myCache = 'restaurantCacheV13';
 
 self.addEventListener('install', function(event) {
   event.waitUntil(
@@ -34,7 +34,7 @@ self.addEventListener('activate', function(event) {
     caches.keys().then(function(cacheNames) {
       return Promise.all(
         cacheNames.filter(function(cacheName) {
-          return cacheName.startsWith('restaurantCache') &&
+          return cacheName.startsWith('restaurantCacheV') &&
                  cacheName != myCache;
         }).map(function(cacheName) {
           return caches.delete(cacheName);
