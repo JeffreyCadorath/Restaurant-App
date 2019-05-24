@@ -22,7 +22,9 @@ self.addEventListener('install', function(event) {
         'js/restaurant_info.js',
         'js/main.js',
         'css/styles.css',
-        'manifest.json'
+        'manifest.json',
+        '/Restaurant-App/',
+        'sw.js'
       ]);
     })
   );
