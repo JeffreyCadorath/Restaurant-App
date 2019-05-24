@@ -60,9 +60,9 @@ nav h1 {
 }
 nav h1 a {
   color: #fff;
-  font-size: 14pt;
+  font-size: 17pt;
   font-weight: 200;
-  letter-spacing: 10px;
+  letter-spacing: 7px;
   text-transform: uppercase;
 }
 #breadcrumb {
@@ -271,9 +271,11 @@ nav h1 a {
   position: relative;
   width: 85%;
 }
+
 #reviews-list li p {
   margin: 0 0 10px;
 }
+
 #restaurant-hours td {
   color: #666;
 }
@@ -284,7 +286,7 @@ nav h1 a {
   }
 
   h1#restaurant-name {
-    font-size: 25pt;
+    font-size: 25px;
   }
 
   #reviews-container {
@@ -292,7 +294,7 @@ nav h1 a {
   }
 
   ul, li {
-    font-size: 20pt;
+    font-size: 20px;
   }
 
   p {
@@ -309,12 +311,21 @@ nav h1 a {
     flex-direction: column;
     flex-wrap: wrap;
   }
+
+  #restaurants-list li {
+    padding: 10px 15px 15px 15px;
+  }
 }
 
 
 @media screen and (max-width: 450px) {
   #restaurants-list li h1 {
     font-size: 10pt;
+  }
+  #restaurants-list li {
+    width: 260px;
+    padding: 10px 15px 15px 15px;
+    align-items: center;
   }
 
   #restaurant-address {
@@ -338,5 +349,14 @@ nav h1 a {
 
   #restaurant-container {
     width: 45%;
+  }
+
+  nav h1 a {
+    font-size: 14px;
+  }
+
+  nav {
+    height: 70px;
+    letter-spacing: 5px;
   }
 }

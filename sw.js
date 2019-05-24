@@ -1,4 +1,4 @@
-const myCache = 'restaurantCacheV11';
+const myCache = 'restaurantCacheV13';
 
 self.addEventListener('install', function(event) {
   event.waitUntil(
